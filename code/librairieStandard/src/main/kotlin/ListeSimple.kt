@@ -1,7 +1,7 @@
 package org.ballestero
 
 fun main(){
-    println(repete(4, 2))
+    println(repete(5, 1))
 }
 fun repete(n: Int, nbFois: Int): List<Int>{
     val resultList = mutableListOf<Int>()
