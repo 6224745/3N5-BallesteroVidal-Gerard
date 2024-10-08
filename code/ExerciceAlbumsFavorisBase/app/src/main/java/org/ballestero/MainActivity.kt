@@ -7,7 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.DividerItemDecoration
-import org.ballestero.adapters.Adapter.MonAdapter
+import org.ballestero.Adapter.MonAdapter
+import org.ballestero.Models.Album
 import  org.ballestero.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,13 +28,13 @@ class MainActivity : AppCompatActivity() {
         binding.rvMonAdapter.setHasFixedSize(true) // Option pour améliorer les performances
     }
     private fun fillRecycler() {
-        val items: MutableList<String> = mutableListOf()
+        val items: MutableList<Album> = mutableListOf()
         val album = listOf(
-            "Antigéographiquement",
-            "J'ai Bu",
-            "Darlène",
-            "jkbskjhbkcdj",
-            "Jaune");
+            Album(id = 1, name = "Antigéographiquement", artistName = "Jérôme 50"),
+            Album(id = 2, name = "J'ai Bu", artistName = "Québec"),
+            Album(id = 3, name = "Darlène", artistName = "Hubert"),
+            Album(id = 4, name = "jkbskjhbkcdj", artistName = "Les Louanges"),
+            Album(id = 5, name = "Jaune", artistName = "hkfdygdsf"))
         for (i in album) {
             items.add(i)
         }

@@ -1,4 +1,4 @@
-package org.ballestero.adapters.Adapter
+package org.ballestero.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,13 +6,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import org.ballestero.databinding.MonItemBinding
+import org.ballestero.Models.Album
 
-class MonAdapter : ListAdapter<String, MonAdapter.MonItemViewHolder>(MonItemDiffCallback) {
+class MonAdapter : ListAdapter<Album, MonAdapter.MonItemViewHolder>(MonItemDiffCallback) {
 
     // binding nous permet d'accéder à tout le champs de notre layout mon_item.xml
     inner class MonItemViewHolder(private val binding: MonItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: String) {
-            binding.tvElement.text = item // On affiche l'élément dans le TextView
+        fun bind(item: Album) {
+            binding.tvElement.text = item.name // On affiche l'élément dans le TextView
+            binding.tvArtistName.text = item.artistName
         }
     }
 
@@ -22,18 +24,21 @@ class MonAdapter : ListAdapter<String, MonAdapter.MonItemViewHolder>(MonItemDiff
     }
 
     override fun onBindViewHolder(holder: MonItemViewHolder, position: Int) {
-        val item: String = getItem(position)
-        holder.bind(item)
+        val album = getItem(position)
+        holder.bind(album)
     }
+
 
 }
 
-object MonItemDiffCallback : DiffUtil.ItemCallback<String>() {
-    override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
+object MonItemDiffCallback : DiffUtil.ItemCallback<Album>() {
+    override fun areItemsTheSame(oldItem: Album, newItem: Album): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
-        return oldItem == newItem
+    override fun areContentsTheSame(oldItem: Album, newItem: Album): Boolean {
+        return oldItem.id == newItem.id &&
+        return oldItem.name == newItem.name &&
+        return oldItem.artistName == newItem.artistName
     }
 }
