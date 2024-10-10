@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import org.ballestero.Adapter.MonAdapter
 import org.ballestero.Models.Album
 import  org.ballestero.databinding.ActivityMainBinding
+import org.ballestero.AlbumActivity
 
 class MainActivity : AppCompatActivity() {
     private  lateinit var binding: ActivityMainBinding

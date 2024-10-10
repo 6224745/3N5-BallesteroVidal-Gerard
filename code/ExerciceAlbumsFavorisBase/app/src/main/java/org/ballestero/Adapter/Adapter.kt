@@ -1,10 +1,12 @@
 package org.ballestero.Adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import org.ballestero.AlbumActivity
 import org.ballestero.databinding.MonItemBinding
 import org.ballestero.Models.Album
 
@@ -15,6 +17,12 @@ class MonAdapter : ListAdapter<Album, MonAdapter.MonItemViewHolder>(MonItemDiffC
         fun bind(item: Album) {
             binding.tvElement.text = item.name // On affiche l'élément dans le TextView
             binding.tvArtistName.text = item.artistName
+            binding.root.setOnClickListener {
+                val intent = Intent(binding.root.context, AlbumActivity::class.java)
+                intent.putExtra("AlbumName", item.name)
+                intent.putExtra("ArtistName", item.artistName)
+                binding.root.context.startActivity(intent)
+            }
         }
     }
 
