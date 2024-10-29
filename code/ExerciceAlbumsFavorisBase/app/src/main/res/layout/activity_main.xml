@@ -13,5 +13,6 @@
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:spanCount="1"
-        tools:listitem="@layout/mon_item" />
+        tools:listitem="@layout/mon_item">
+    </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

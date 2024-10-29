@@ -23,6 +23,14 @@ class MonAdapter : ListAdapter<Album, MonAdapter.MonItemViewHolder>(MonItemDiffC
                 intent.putExtra("ArtistName", item.artistName)
                 binding.root.context.startActivity(intent)
             }
+            binding.btDelete.setOnClickListener {
+                val liste = currentList.toMutableList()
+                // Trouver index de l'éléments
+                val index = liste.indexOf(item)
+                // suppriemer
+                liste.removeAt(index)
+                submitList(liste)
+            }
         }
     }
 
