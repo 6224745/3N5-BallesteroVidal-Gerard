@@ -10,9 +10,9 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ListeDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val ListeName = intent.getStringExtra("Name")
-        val ListeObjet = intent.getStringExtra("Objet")
-        binding.Name.text = ListeName
-        binding.Objet.text = ListeObjet
+        val listeName = intent.getStringExtra("Name")
+        val listeObjet = intent.getStringExtra("Objet")
+        binding.listName.text = listeName
+        binding.listObjet.text = listeObjet
     }
 }

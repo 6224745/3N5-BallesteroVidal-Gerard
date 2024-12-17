@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
             Liste(id = 2, name = "Android 1.5", objet = "Cupcake"),
             Liste(id = 3, name = "Android 2.0", objet = "Eclair"),
             Liste(id = 4, name = "Android 3.0", objet = "Honeycamb"),
-            Liste(id = 5, name = "JauAndroid 4.0", objet = "Ice cream sandwich"),
-            Liste(id = 6, name = "JauAndroid 5.0", objet = "Lollipop"))
+            Liste(id = 5, name = "Android 4.0", objet = "Ice cream sandwich"),
+            Liste(id = 6, name = "Android 5.0", objet = "Lollipop"))
         items.addAll(album)
         adapter.submitList(items) // Pour changer le contenu de la liste, utiliser submitList de l'adapteur
     }
